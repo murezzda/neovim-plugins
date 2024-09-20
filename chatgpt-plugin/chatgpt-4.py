@@ -82,9 +82,9 @@ class ChatGPTPlugin(object):
                 model="gpt-4",
                 messages=[{"role": "user", "content": prompt}],
             )
-        elif len(prompt) < 12000:  # 12'000 chars are about 3000 tokens.
+        elif len(prompt) < 25000:  # 25'000 chars are about 6000 tokens.
             chat_completion = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
+                model="gpt-4",
                 messages=[{"role": "user", "content": prompt}],
             )
         else:
